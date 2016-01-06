@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  root 'static_pages#index'
+  
+  resources :categories
+  resources :articles do
+    collection do
+      get 'get_articles'
+      get 'get_article'
+    end
+  end
+  resources :article_comments
+  resources :article_likes
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

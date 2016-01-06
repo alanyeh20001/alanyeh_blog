@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+#main-content {
+  padding-top: 20px;
+  padding-bottom: 70px;
+}
+
+#footer-bar {
+  background-color: rgba(200, 200, 200, 0.7);
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 15px;
+}
