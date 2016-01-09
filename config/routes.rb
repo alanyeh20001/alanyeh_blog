@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => {:omniauth_callbacks => "callbacks"}
   root 'static_pages#index'
   
   resources :categories
   resources :articles do
     collection do
       get 'get_articles'
-      get 'get_article'
     end
   end
   resources :article_comments

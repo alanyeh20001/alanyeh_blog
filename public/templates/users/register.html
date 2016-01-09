@@ -1,0 +1,39 @@
+<div id="register-page">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <div class="form-group fb-register">
+            <button type="button" class="btn btn-primary btn-block" ng-click="">FaceBook</button>
+          </div>
+          <div class="form-group 500px-register">
+            <button type="button" class="btn btn-primary btn-block" ng-click="">500px</button>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <form name="register-field" role="form" ng-submit="register()">
+            <div class="form-group" id="email">
+              <label>Email</label> 
+                <input class="form-control" type="email" name="email" ng-model="email" required />
+            </div>
+            <div class="form-group" id="password">
+              <label>Password</label>
+                <input class="form-control" type="password" ng-minlength="8" ng-model="password" placeholder="8 characters minimun" required />
+            </div>
+            <div class="form-group" id="password-confirm">
+              <label>Password Confirmation</label>
+                <input class="form-control" type="password" ng-minlength="8" ng-model="password_confirm" required />
+            </div>
+            <div class="form-group" id="name">
+              <label>Name</label>
+                <input class="form-control" type="string" name="name" ng-model="name" required />
+            </div>
+            <div class="form-group" id="submit">
+              <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,14 @@
-@alanyehBlog.controller 'HomeCtrl', ['$scope', '$location', '$http', ($scope, $location, $http) ->
+@alanyehBlog.controller 'HomeCtrl', ['$scope', '$location', '$http', 'Auth', ($scope, $location, $http, Auth) ->
   
+#  Auth.currentUser().then((user) ->
+#    $scope.user = user
+#    console.log($scope.checkSignInOrNot)
+#    console.log("home load")
+#  , (error) ->
+#    console.log(error)
+#  )
   
-  # Get articles information
+  # Get all articles information
   $http({
     method: "GET",
     url: "/articles/get_articles",

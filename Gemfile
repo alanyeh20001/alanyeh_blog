@@ -26,6 +26,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # use simple_form to facilitate form creation
 gem 'simple_form'
 
+# Use Devise, OmniAuth to conduct user authentication
+gem 'devise'
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
