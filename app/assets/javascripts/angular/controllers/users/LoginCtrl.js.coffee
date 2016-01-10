@@ -17,7 +17,7 @@
       $scope.$emit('NavbarChange', $scope.checkSignInOrNot) 
       $location.path("/")
     , (error) ->
-      console.log(error)
+      console.log("log_in error")
     )
     
     $scope.$on('devise:login', (event, currentUser) ->
@@ -25,5 +25,6 @@
     
     $scope.$on('devise:new-session', (event, currentUser) ->
     )
-    
+  
+     
 ]

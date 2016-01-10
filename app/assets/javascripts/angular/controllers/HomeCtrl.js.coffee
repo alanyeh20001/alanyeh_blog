@@ -17,8 +17,8 @@
     $scope.articles = data.data
     console.log($scope.articles)
   )
- 
   
+  # Direct to an specific article page
   $scope.getAnArticle = (article_id) ->
     $location.path("/articles/" + article_id)
   
