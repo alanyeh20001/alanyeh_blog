@@ -245,7 +245,7 @@ Devise.setup do |config|
   else
     config.omniauth :facebook, '1672955852918363', 'c7af4c725f73a2b8621b78d4ef154826'#,
                              # {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
- 
+  end
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

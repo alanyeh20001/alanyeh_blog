@@ -1,4 +1,4 @@
-@alanyehBlog.controller 'layoutCtrl', ['$scope', '$location', '$http', 'Auth',($scope, $location, $http, Auth) ->
+@alanyehBlog.controller 'layoutCtrl', ['$scope', '$location', '$http', '$route', 'Auth',($scope, $location, $http, $route, Auth) ->
   
   
   # Check if the user has signed in when reloading
@@ -21,6 +21,7 @@
     Auth.logout(config).then((oldUser) ->
       console.log(oldUser)
       $scope.checkSignInOrNot = false
+      $route.reload("#")
     , (error) ->
       console.log("sign_out error")
     )

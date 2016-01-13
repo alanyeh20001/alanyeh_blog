@@ -6,9 +6,17 @@
       templateUrl: '../templates/home.html',
       controller: 'HomeCtrl'
     }).
+    when('/articles/new', {
+      templateUrl: '/templates/articles/new.html',
+      controller: 'NewCtrl'
+    }).
     when('/articles/:id', {
       templateUrl: '/templates/articles/show.html',
       controller: 'ShowCtrl'
+    }).
+    when('/articles/:id/edit', {
+      templateUrl: '/templates/articles/edit.html',
+      controller: 'EditCtrl'
     }).
     when('/login', {
       templateUrl: '../templates/users/login.html',
@@ -48,5 +56,5 @@
   
   # Intercept 401 Unauthorized everywhere
   # Enables 'devise:unauthorized' interceptor
-  AuthInterceptProvider.interceptAuth(true)
+  #AuthInterceptProvider.interceptAuth(true)
 ])

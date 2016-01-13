@@ -2,5 +2,19 @@
 .article-content {
   font-size: 20px;
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 
+.back-top-button {
+  position: fixed;
+  right: 10px;
+  bottom: 155px;
+  z-index: 1;
+}
+
+.back-home-button {
+  position: fixed;
+  right: 10px;
+  bottom: 95px;
+  z-index: 1;
+}

@@ -2,6 +2,13 @@ html, body {
   height: 100%;
 }
 
+nav {
+  background-image: url(image-path('6.jpg'));
+  background-color: white;
+  background-repeat: no-repeat;
+  padding-top: 320px;
+}
+
 #wrapper {
   min-height: 100%;
   position: relative;
