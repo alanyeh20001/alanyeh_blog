@@ -15,7 +15,7 @@
   $scope.getArticles = () ->
     $http({
       method: "GET",
-      url: "/articles/get_articles",
+      url: "/articles",
     }).then((data) ->
       console.log(data)
       $scope.articles = data.data
@@ -24,12 +24,7 @@
   
   # Create a new article
   $scope.createNewArticle = () ->
-    Auth.currentUser().then((user) ->
-      $location.path("/articles/new")
-    , (error) ->
-      console.log(error.data)
-      $location.path("/login")
-    )
+    $location.path("/articles/new")
   
   # Direct to article edit page
   $scope.editAnArticle = (article_id) ->

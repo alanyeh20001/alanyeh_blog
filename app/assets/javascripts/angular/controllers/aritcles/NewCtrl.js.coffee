@@ -1,10 +1,12 @@
-@alanyehBlog.controller 'NewCtrl', ['$scope', '$location', '$http', '$route', '$routeParams', 'Auth', ($scope, $location, $http, $route, $routeParams, Auth) ->
+@alanyehBlog.controller 'NewCtrl', ['$scope', '$rootScope', '$location', '$http', '$route', '$routeParams', 'Auth', ($scope, $rootScope, $location, $http, $route, $routeParams, Auth) ->
   
   Auth.currentUser().then((user) ->
     $scope.user = user
     console.log($scope.user)
   , (error) ->
     console.log(error)
+    $rootScope.RedirectUrl = $location.url()
+    $location.path("/login")
   )
   
   $scope.createArticle = () ->

@@ -1,5 +1,7 @@
-@alanyehBlog.controller 'LoginCtrl', ['$scope', '$location', '$http', '$route', 'Auth', ($scope, $location, $http, $route, Auth) ->
+@alanyehBlog.controller 'LoginCtrl', ['$scope', '$rootScope', '$location', '$http', '$route', 'Auth', ($scope, $rootScope, $location, $http, $route, Auth) ->
   
+  $scope.redirectUrl = $rootScope.RedirectUrl
+  console.log($scope.redirectUrl)
   $scope.logIn = () ->
     credentials = {
       email: $scope.email,
@@ -14,8 +16,8 @@
     console.log(credentials)
     Auth.login(credentials, config).then((user) ->
       console.log(user)
-      $scope.$emit('NavbarChange', $scope.checkSignInOrNot) 
-      $location.path("/")
+      $scope.$emit('NavbarChange', $scope.checkSignInOrNot)
+      $location.path($scope.redirectUrl)
     , (error) ->
       console.log("log_in error")
     )
@@ -26,5 +28,4 @@
     $scope.$on('devise:new-session', (event, currentUser) ->
     )
   
-     
 ]

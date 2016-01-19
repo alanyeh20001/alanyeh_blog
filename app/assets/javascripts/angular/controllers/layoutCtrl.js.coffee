@@ -10,7 +10,16 @@
     console.log("layout user load error")
     $scope.checkSignInOrNot = false
   )
-
+  
+  # Direct to search page & controller
+  $scope.findSearchArticles = () ->
+    $scope.$broadcast('searchArticles', $scope.searchContent)
+    if $location.url() != "/search"
+      $location.path("/search")
+    else
+      $route.reload()
+  
+  
   $scope.signOut = () ->
     console.log('sign out ok')
     config = {

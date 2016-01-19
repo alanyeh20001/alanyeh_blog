@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :articles do
     collection do
-      get 'get_articles'
+      get 'get_articles_by_search'
     end
   end
   resources :article_comments

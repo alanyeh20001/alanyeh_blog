@@ -5,4 +5,8 @@ class Article < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :user
 	
+	def self.search(searchArticle)
+	  where("title LIKE ?", "%#{searchArticle}%")
+	end
+	
 end

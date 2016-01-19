@@ -25,6 +25,7 @@
       $scope.article = data.data
     )
   
+  # Scroll to the top of the page
   $scope.scrollTop = () ->
     $route.reload()
   

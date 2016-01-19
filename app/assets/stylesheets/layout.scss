@@ -2,11 +2,21 @@ html, body {
   height: 100%;
 }
 
-nav {
-  background-image: url(image-path('6.jpg'));
-  background-color: white;
+#nav-background {
+  height: 320px;
+  background-image: url(image-path('1.jpg'));
+  background-color: red;
   background-repeat: no-repeat;
-  padding-top: 320px;
+  background-size: cover;
+}
+
+.search-bar {
+//  padding-top:230px;
+}
+
+.search-title {
+  padding-top: 200px;
+  color: white;
 }
 
 #wrapper {

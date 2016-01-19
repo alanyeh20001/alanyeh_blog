@@ -1,8 +1,12 @@
 class ArticlesController < ApplicationController
   #before_action :authenticate_user!
-  
-  def get_articles
-    @articles = Article.all
+    
+  def index
+    if params[:title]
+      @articles = Article.search(params[:title]).order(created_at: :desc)
+    else
+      @articles = Article.order(created_at: :desc)
+    end
     
     render json: @articles
   end

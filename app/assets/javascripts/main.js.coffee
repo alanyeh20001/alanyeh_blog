@@ -26,6 +26,14 @@
       templateUrl: '../templates/users/register.html',
       controller: 'RegisterCtrl'
     }).
+    when('/archives', {
+      templateUrl: '../templates/archives/archive.html',
+      controller: 'ArchiveCtrl'
+    }).
+    when('/search', {
+      templateUrl: '../templates/search.html',
+      controller: 'SearchCtrl'
+    }).
     otherwise({
       templateUrl: '../templates/home.html',
       controller: 'HomeCtrl'
@@ -58,3 +66,6 @@
   # Enables 'devise:unauthorized' interceptor
   #AuthInterceptProvider.interceptAuth(true)
 ])
+
+  
+  
