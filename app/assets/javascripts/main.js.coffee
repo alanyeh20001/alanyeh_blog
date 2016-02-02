@@ -1,4 +1,4 @@
-@alanyehBlog = angular.module('alanyehBlog', ['Devise'])
+@alanyehBlog = angular.module('alanyehBlog', ['Devise', 'ngCkeditor'])
 
 @alanyehBlog.config(['$routeProvider', ($routeProvider) ->
   $routeProvider.
@@ -67,5 +67,4 @@
   #AuthInterceptProvider.interceptAuth(true)
 ])
 
-  
-  
+

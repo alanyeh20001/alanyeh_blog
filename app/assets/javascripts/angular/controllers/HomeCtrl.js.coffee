@@ -126,3 +126,14 @@
     )
 
 ]
+
+@alanyehBlog.filter('textLengthLimit', () ->
+  (text, limit) ->
+    pureText = String(text).replace(/<[^>]+>/gm, '')
+    textLength = pureText.length
+    if textLength > limit
+      pureText.substr(0, limit - 1)
+    else
+      pureText
+)
+

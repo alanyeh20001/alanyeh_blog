@@ -6,14 +6,14 @@
   <!-- Main Content -->
   <div class="row">
     <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-      <form class="article-form" ng-submit="createArticle()" novalidate>
+      <form class="article-form" ng-submit="createArticle()">
         <div class="form-group">
           <label for="topic">Topic</label>
           <input type="text" class="form-control" ng-model="title" required />
         </div>
         <div class="form-group">
           <label for="content">Content</label>
-          <textarea class="form-control" rows="10" ng-model="content" required></textarea>
+          <textarea ckeditor="editorOptions" ng-model="content"></textarea>
         </div>
         <div class="form-group">
           <label for="catrgory">Category</label>
@@ -22,7 +22,7 @@
             <option value="2">Traveling</option>
             <option value="3">Photos</option>
           </select>
-          <input type="submit" value="Submit" class="btn btn-default pull-right" /> 
+        <input type="submit" value="Submit" class="btn btn-default pull-right" />
         </div>
       </form>
     </div>
