@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   
   resources :categories
-  resources :articles
+  resources :articles do
+    collection do
+      post 'add_browse_times'
+    end
+  end
   resources :article_comments
   resources :article_likes do
     collection do

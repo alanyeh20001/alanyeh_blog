@@ -53,6 +53,17 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def add_browse_times
+    @article = Article.find_by("id = ?", params[:article_id])
+    @article.browse_times += 1
+    
+    if @article.save
+      render json: {status: "add browse times successfully"}
+    else
+      render json: {status: "add browse times fail"}
+    end
+  end
+ 
   
   private
   

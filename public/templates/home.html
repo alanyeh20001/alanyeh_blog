@@ -1,51 +1,53 @@
 <div id="home">
-  <!-- Direction Button -->
-  <div class="back-top-button">
-    <a href="#"><i class="fa fa-arrow-up fa-3x text-danger fa-border"></i></a>
-  </div>
-  <div class="row">
-    <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
-      <div class="form-group pull-right">
-        <a class="btn btn-default" href="" ng-click="createNewArticle()">New Aritcle</a>
+  <div class="container">
+    <!-- Direction Button -->
+    <div class="back-top-button">
+      <a href="#"><i class="fa fa-arrow-up fa-3x text-danger fa-border"></i></a>
+    </div>
+    <div class="row">
+      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+        <div class="form-group pull-right">
+          <a class="btn btn-default" href="" ng-click="createNewArticle()">New Aritcle</a>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- Main Content -->
-  <div class="row" id="main">
-    <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
-      <div class="main-article" ng-repeat="article in articles">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
-                <h4><a ng-click="getAnArticle(article.id)">{{article.title | limitTo:30}}</a></h4>
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                <h4 class="text-right">{{article.created_at | limitTo: 10}}</h4>
+    <!-- Main Content -->
+    <div class="row" id="main">
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+        <div class="main-article" ng-repeat="article in articles">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
+                  <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo:30}}</a></h4>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                  <h4 class="text-right">{{article.created_at | limitTo: 10}}</h4>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="panel-body">
-            <div ng-bind-html-unsafe="article.content | textLengthLimit: 300"> ...</div>
-          </div>
-          <div class="panel-footer">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <div ng-if="article.user_id == user.id">
-                  <button ng-click="editAnArticle(article.id)" class="btn btn-default">Edit</button>
-                  <button ng-click="deleteAnArticle(article.id)" class="btn btn-default">Delete</button>
+            <div class="panel-body">
+              <div ng-bind-html-unsafe="article.content | textLengthLimit: 300"> ...</div>
+            </div>
+            <div class="panel-footer">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                  <div ng-if="article.user_id == user.id">
+                    <button ng-click="editAnArticle(article.id)" class="btn btn-default">Edit</button>
+                    <button ng-click="deleteAnArticle(article.id)" class="btn btn-default">Delete</button>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div ng-if="IfUserLiked(article.id)">
-                  <h4 class="text-right"><a href="" ng-click="addOrRemoveLike(article.id, $index)"><i class="fa fa-heart"></i></a> {{article.like}}</h4>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <div ng-if="IfUserLiked(article.id)">
+                    <h4 class="text-right"><a href="" ng-click="addOrRemoveLike(article.id, $index)"><i class="fa fa-heart"></i></a> {{article.like}}</h4>
+                  </div>
+                  <div ng-if="!IfUserLiked(article.id)">
+                    <h4 class="text-right"><a href="" ng-click="addOrRemoveLike(article.id, $index)"><i class="fa fa-heart-o"></i></a> {{article.like}}</h4>
+                  </div>
                 </div>
-                <div ng-if="!IfUserLiked(article.id)">
-                  <h4 class="text-right"><a href="" ng-click="addOrRemoveLike(article.id, $index)"><i class="fa fa-heart-o"></i></a> {{article.like}}</h4>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                  <h4><i class="fa fa-eye"></i> {{article.browse_times}}</h4>
                 </div>
-              </div>
-              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <h4><i class="fa fa-eye"></i> {{article.browse_times}}</h4>
               </div>
             </div>
           </div>

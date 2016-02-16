@@ -1,0 +1,21 @@
+#login-page {
+  
+  background-image: url(image-path("register-back.JPG"));
+  background-size: cover;
+  
+  .facebook {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: #01539f;
+  }
+  
+  .login {
+    background-color: rgba(225, 225, 225, 0.9);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    border-radius: 10px;
+  }
+
+}

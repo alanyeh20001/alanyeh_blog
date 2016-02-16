@@ -240,7 +240,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   if Rails.env.production?
-    config.omniauth :facebook, '1672107559669859', '317ce0a1bf4b9c6a6c1bdde5a5fed908', callback_url: "http://alanyeh-blog.herokuapp.com/"
+    config.omniauth :facebook, '539415222893610', 'f78de134b50366db1ae6fcb92fc97b1b', {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
     #  {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
   else
     config.omniauth :facebook, '1672955852918363', 'c7af4c725f73a2b8621b78d4ef154826'

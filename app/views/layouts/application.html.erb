@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
   <script src="https://s3-ap-southeast-1.amazonaws.com/naveensingh/posts_data/ckeditor_example/ng-ckeditor.min.js"></script>
 </head>
@@ -14,12 +15,27 @@
       <%= render "layouts/searchbar" %>
     </div>
     <%= render "layouts/navbar" %>
-    <div class="container" id="main-content">
-      <div ng-view >
-        <%= yield %>
-      </div>
+    <div id="main-content" ng-view >
+      <%= yield %>
     </div>
     <%= render "layouts/footer" %>
   </div>
 </body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '539415222893610',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 </html>

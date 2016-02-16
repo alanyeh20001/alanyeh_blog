@@ -40,6 +40,18 @@
     else
       $scope.categoryItem = 4
   
+  # Direct to article show page
+  $scope.getAnArticle = (article_id) ->
+    params = {article_id: article_id}
+    $http({
+      method: "POST",
+      url: "/articles/add_browse_times",
+      data: params
+    }).then((data) ->
+      console.log(data.status)
+    )
+    $location.path("/articles/" + article_id)
+    
   # Scroll to the top of the page
   $scope.scrollTop = () ->
     $route.reload()  
