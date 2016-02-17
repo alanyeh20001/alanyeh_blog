@@ -18,20 +18,20 @@
       <div ng-if="listByTime">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="row">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
               <h2><strong>2016</strong></h2>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
               <h4><i class="fa fa-heart text-danger"></i></h4>
             </div>
           </div>
           <div class="row" ng-repeat="article in articles">
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
               <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
               <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -61,25 +61,40 @@
           <div class="row">
             <div ng-switch="categoryItem">
               <div ng-switch-default>
-                <h1>Coding</h1>
-                <div class="row" ng-repeat="article in categoryCoding">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Coding</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryCoding">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4>{{article.like}}</h4>
                   </div>
                 </div>
               </div>
               <div ng-switch-when="1">
-                <h1>Coding</h1>
-                <div class="row" ng-repeat="article in categoryCoding">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Coding</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryCoding">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -87,12 +102,19 @@
                 </div>
               </div>
               <div ng-switch-when="2">
-                <h1>Travel</h1>
-                <div class="row" ng-repeat="article in categoryTravel">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Travel</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryTravel">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -100,12 +122,19 @@
                 </div>
               </div>
               <div ng-switch-when="3">
-                <h1>Movie</h1>
-                <div class="row" ng-repeat="article in categoryMovie">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Movie</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryMovie">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -113,12 +142,19 @@
                 </div>
               </div>
               <div ng-switch-when="4">
-                <h1>Others</h1>
-                <div class="row" ng-repeat="article in categoryOthers">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Others</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryOthers">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -126,12 +162,19 @@
                 </div>
               </div>
               <div ng-switch-when="5">
-                <h1>Technology</h1>
-                <div class="row" ng-repeat="article in categoryTechnology">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Technology</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryTechnology">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -139,12 +182,19 @@
                 </div>
               </div>
               <div ng-switch-when="6">
-                <h1>Commerce</h1>
-                <div class="row" ng-repeat="article in categoryCommerce">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Commerce</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryCommerce">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -152,12 +202,19 @@
                 </div>
               </div>
               <div ng-switch-when="7">
-                <h1>Mood</h1>
-                <div class="row" ng-repeat="article in categoryMood">
+                <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <h1>Mood</h1>
+                  </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4><i class="fa fa-heart text-danger"></i></h4>
+                  </div>
+                </div>
+                <div class="row" ng-repeat="article in categoryMood">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
-                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
                     <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
