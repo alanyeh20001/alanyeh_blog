@@ -1,7 +1,7 @@
 @alanyehBlog.controller 'LoginCtrl', ['$scope', '$rootScope', '$location', '$http', '$route', 'Auth', ($scope, $rootScope, $location, $http, $route, Auth) ->
   
   $scope.redirectUrl = $rootScope.RedirectUrl
-  console.log($scope.redirectUrl)
+  
   $scope.logIn = () ->
     credentials = {
       email: $scope.email,
@@ -17,7 +17,7 @@
     Auth.login(credentials, config).then((user) ->
       console.log(user)
       $scope.$emit('NavbarChange', $scope.checkSignInOrNot)
-      $location.path($scope.redirectUrl)
+      $location.path("/")
     , (error) ->
       console.log("log_in error")
     )

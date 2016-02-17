@@ -49,8 +49,11 @@
               </button>
               <ul class="dropdown-menu dropdown-menu-right">
                 <li><a href="" ng-click="displayCategory(1)">Coding</a></li>
-                <li><a href="" ng-click="displayCategory(2)">Traveling</a></li>
-                <li><a href="" ng-click="displayCategory(3)">Photos</a></li>
+                <li><a href="" ng-click="displayCategory(2)">Travel</a></li>
+                <li><a href="" ng-click="displayCategory(3)">Movie</a></li>
+                <li><a href="" ng-click="displayCategory(5)">Technology</a></li>
+                <li><a href="" ng-click="displayCategory(6)">Commerce</a></li>
+                <li><a href="" ng-click="displayCategory(7)">Mood</a></li>
                 <li><a href="" ng-click="displayCategory(4)">Others</a></li>
               </ul>
             </div>
@@ -84,8 +87,8 @@
                 </div>
               </div>
               <div ng-switch-when="2">
-                <h1>Traveling</h1>
-                <div class="row" ng-repeat="article in categoryTraveling">
+                <h1>Travel</h1>
+                <div class="row" ng-repeat="article in categoryTravel">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
@@ -97,8 +100,8 @@
                 </div>
               </div>
               <div ng-switch-when="3">
-                <h1>Photos</h1>
-                <div class="row" ng-repeat="article in categoryPhotos">
+                <h1>Movie</h1>
+                <div class="row" ng-repeat="article in categoryMovie">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>
@@ -112,6 +115,45 @@
               <div ng-switch-when="4">
                 <h1>Others</h1>
                 <div class="row" ng-repeat="article in categoryOthers">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
+                  </div>
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                  </div>
+                </div>
+              </div>
+              <div ng-switch-when="5">
+                <h1>Technology</h1>
+                <div class="row" ng-repeat="article in categoryTechnology">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
+                  </div>
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                  </div>
+                </div>
+              </div>
+              <div ng-switch-when="6">
+                <h1>Commerce</h1>
+                <div class="row" ng-repeat="article in categoryCommerce">
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
+                  </div>
+                  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <h4><a href="" ng-click="getAnArticle(article.id)">{{article.title | limitTo: 30}}</a></h4>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                  </div>
+                </div>
+              </div>
+              <div ng-switch-when="7">
+                <h1>Mood</h1>
+                <div class="row" ng-repeat="article in categoryMood">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                     <h4 class="text-center">{{article.created_at | StringSliceFilter: 5: 10}}</h4>
                   </div>

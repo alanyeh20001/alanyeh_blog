@@ -4,10 +4,12 @@
     <div class="back-top-button">
       <a href="#"><i class="fa fa-arrow-up fa-3x text-danger fa-border"></i></a>
     </div>
-    <div class="row">
-      <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
-        <div class="form-group pull-right">
-          <a class="btn btn-default" href="" ng-click="createNewArticle()">New Aritcle</a>
+    <div ng-if="user && user.id == 1">
+      <div class="row">
+        <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12">
+          <div class="form-group pull-right">
+            <a class="btn btn-default" href="" ng-click="createNewArticle()">New Article</a>
+          </div>
         </div>
       </div>
     </div>

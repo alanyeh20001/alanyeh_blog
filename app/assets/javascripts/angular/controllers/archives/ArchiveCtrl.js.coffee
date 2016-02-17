@@ -8,16 +8,22 @@
     $scope.articles = data.data
   
     # Sort the articles by category
-    # 1 for "Coding", 2 for "Traveling", 3 for "Photos", none for "Others"
+    # 1 for "Coding", 2 for "Travel", 3 for "Movie", 4 for "Others"
     $scope.categoryCoding = []
-    $scope.categoryTraveling = []
-    $scope.categoryPhotos = []
+    $scope.categoryTravel = []
+    $scope.categoryMovie = []
     $scope.categoryOthers = []
+    $scope.categoryTechnology = []
+    $scope.categoryCommerce = []
+    $scope.categoryMood = []
     for i in [0..$scope.articles.length-1]
       switch $scope.articles[i].category_id
         when 1 then $scope.categoryCoding.push($scope.articles[i])
-        when 2 then $scope.categoryTraveling.push($scope.articles[i])
-        when 3 then $scope.categoryPhotos.push($scope.articles[i])
+        when 2 then $scope.categoryTravel.push($scope.articles[i])
+        when 3 then $scope.categoryMovie.push($scope.articles[i])
+        when 5 then $scope.categoryTechnology.push($scope.articles[i])
+        when 6 then $scope.categoryCommerce.push($scope.articles[i])
+        when 7 then $scope.categoryMood.push($scope.articles[i])
         else $scope.categoryOthers.push($scope.articles[i])
   )
 
@@ -37,10 +43,16 @@
       $scope.categoryItem = 2
     else if num == 3
       $scope.categoryItem = 3
+    else if num == 5
+      $scope.categoryItem = 5
+    else if num == 6
+      $scope.categoryItem = 6
+    else if num == 7
+      $scope.categoryItem = 7
     else
       $scope.categoryItem = 4
   
-  # Direct to article show page
+  # Direct to article show page & add browse times
   $scope.getAnArticle = (article_id) ->
     params = {article_id: article_id}
     $http({

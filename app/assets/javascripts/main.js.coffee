@@ -30,6 +30,10 @@
       templateUrl: '../templates/archives/archive.html',
       controller: 'ArchiveCtrl'
     }).
+    when('/introduction', {
+      templateUrl: '../templates/introduction/introduction.html',
+      controller: 'IntroductionCtrl'
+    }).
     when('/search', {
       templateUrl: '../templates/search.html',
       controller: 'SearchCtrl'
